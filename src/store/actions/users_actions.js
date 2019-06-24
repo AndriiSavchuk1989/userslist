@@ -13,7 +13,6 @@ export const fetchAllUsers = () => dispatch => {
   axios
     .get("https://jsonplaceholder.typicode.com/users")
     .then(response => {
-      console.log(response);
       dispatch({
         type: FETCH_ALL_USERS_SUCCESS,
         payload: Array.from(response.data)
