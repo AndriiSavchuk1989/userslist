@@ -11,15 +11,16 @@ class UsersList extends React.Component {
 
   componentDidMount() {
     this.props.fetchAllUsers();
+    this.setState({ users: [...this.props.users] });
   }
   render() {
-    console.log("this.props___", this.props);
+    console.log("this.props___", this.props.users);
     return <div />;
   }
 }
 
 const mapStateToProps = state => ({
-  users: state.users
+  users: state.users.users
 });
 
 const mapDispatchToProps = dispatch => ({
